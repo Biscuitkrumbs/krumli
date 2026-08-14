@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Krumli — useful things, built sideways." />
+  <meta name="theme-color" content="#f6f3ee" />
+  <title>Krumli — useful things, built sideways.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Krumli home">
+        <span class="brand-mark" aria-hidden="true">k</span>
+        <span class="brand-name">krumli</span>
+      </a>
+      <span class="status-pill">building quietly</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Small ideas. Useful outcomes.</p>
+      <h1>Useful things,<br><span>built sideways.</span></h1>
+      <p class="intro">
+        Krumli is a home for simple tools that start with a real problem
+        and grow only as far as they need to.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary" href="#what-we-make">See what we're making</a>
+        <a class="button secondary" href="mailto:hello@krumli.com">hello@krumli.com</a>
+      </div>
+    </section>
+
+    <section class="principles" id="what-we-make" aria-label="Krumli principles">
+      <article class="card">
+        <span class="card-number">01</span>
+        <h2>Start small</h2>
+        <p>Build the useful part first. Add complexity only when it earns its place.</p>
+      </article>
+
+      <article class="card">
+        <span class="card-number">02</span>
+        <h2>Remove friction</h2>
+        <p>Good tools should take something off your mind, not give you another system to maintain.</p>
+      </article>
+
+      <article class="card">
+        <span class="card-number">03</span>
+        <h2>Follow the problem</h2>
+        <p>The best solution does not always grow in a straight line. That's kind of the point.</p>
+      </article>
+    </section>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Krumli</span>
+      <span>Armidale, Australia</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
