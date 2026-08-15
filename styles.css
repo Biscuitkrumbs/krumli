@@ -155,6 +155,87 @@ h1 span {
   background: rgba(255, 255, 255, 0.5);
 }
 
+.projects {
+  padding: 0 0 72px;
+}
+
+.section-label {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-card {
+  min-height: 190px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 60px rgba(42, 37, 31, 0.12);
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #a94b22;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-card h2 {
+  margin: 0 0 8px;
+  font: 700 clamp(28px, 4vw, 42px)/1.05 "Manrope", sans-serif;
+  letter-spacing: -0.045em;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.project-arrow {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--text);
+  color: white;
+  font-size: 24px;
+  transition: transform 160ms ease;
+}
+
+.project-card:hover .project-arrow {
+  transform: translateX(4px);
+}
+
 .principles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -262,4 +343,19 @@ h1 span {
     flex-direction: column;
     justify-content: center;
   }
+
+  .projects {
+  padding-bottom: 56px;
+}
+
+.project-card {
+  min-height: 170px;
+  padding: 24px;
+}
+
+.project-arrow {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+}
 }
