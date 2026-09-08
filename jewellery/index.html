@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111e2a"><title>Atelier — Jewellery Design Sandbox</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+<header><div class="brand"><span class="brandmark">◈</span> ATELIER <span class="subtitle">Jewellery sandbox</span></div><div class="header-actions"><span class="live-dot"></span><span>3D studio</span><button id="undo" title="Undo (Ctrl/Cmd Z)">↶ Undo</button></div></header>
+<main>
+<aside class="left panel">
+<div class="eyebrow">01 / FOUNDATION</div><h1>Your necklace</h1>
+<label for="type">Silhouette</label><select id="type"><option value="drape">Classic drape</option><option value="collar">Round collar</option><option value="v">V necklace</option></select>
+<div class="label-row"><label for="length">Strand length</label><output id="length-value">45 cm</output></div><input type="range" id="length" min="35" max="75" value="45" step="1"><div class="range-ends"><span>35 cm</span><span>75 cm</span></div>
+<label for="base-style">Base style</label><select id="base-style"><option value="chain">Fine chain</option><option value="cord">Silk cord</option><option value="wire">Smooth wire</option></select>
+<label for="base-material">Base material</label><select id="base-material"><option value="gold">Gold</option><option value="silver">Silver</option><option value="rose">Rose gold</option><option value="black">Graphite</option></select>
+<div class="divider"></div><div class="eyebrow">DISPLAY</div>
+<label for="view">Mannequin</label><select id="view"><option value="ghost">Translucent</option><option value="wire">Wireframe</option><option value="solid">Porcelain</option><option value="hidden">Hidden</option></select>
+<button id="front" class="wide secondary">↺ Reset camera</button>
+<div class="studio-note"><span>TRUE-SIZE PARTS</span><p>Bead dimensions and strand length share the same millimetre scale.</p></div>
+</aside>
+<section class="stage" aria-label="Interactive 3D jewellery editor">
+<div class="stage-heading"><div class="eyebrow">DESIGN NO. 001</div><h2>A little symmetry.<br>A lot of possibility.</h2></div>
+<div id="viewport"><div id="loading">Preparing your studio…</div></div>
+<div class="view-badge">PERSPECTIVE <span> / </span> REAL SCALE</div>
+<div class="stage-bottom"><div class="tools" aria-label="Editing tools"><button id="place" class="active" aria-pressed="true">＋ Place</button><button id="select" aria-pressed="false">↖ Select</button><span></span><button id="remove" disabled>⌫ Remove</button><button id="clear">Clear</button></div><p id="hint">Choose a part, then click the strand. Drag to orbit · Scroll to zoom</p></div>
+<div id="toast" role="status" aria-live="polite"></div>
+</section>
+<aside class="right panel"><div class="eyebrow">02 / COMPONENTS</div><div class="library-heading"><h2>The bead box</h2><span>7 shapes</span></div><p class="muted">Pick a shape. Make it yours.</p>
+<div id="library" class="library"></div>
+<div class="divider"></div><div class="eyebrow" id="appearance-title">NEW PART APPEARANCE</div>
+<label for="colour">Colour <span id="hex">#7DC7C0</span></label><div class="colour-row"><input id="colour" type="color" value="#7dc7c0" aria-label="Any component colour"><div id="swatches"></div></div>
+<label for="finish">Finish</label><select id="finish"><option value="ceramic">Glazed ceramic</option><option value="pearl">Pearl</option><option value="metal">Polished metal</option><option value="glass">Glass</option><option value="matte">Matte stone</option></select>
+<label class="toggle"><input id="mirror" type="checkbox" checked><span class="switch"></span><span>Mirror placement</span></label><p class="muted small">Place a matching part on the other side. Pendants always find the centre.</p>
+<div id="selection-info" class="selection-info">Round bead · 8 × 8 × 8 mm</div>
+</aside>
+</main>
+<footer><div><span class="stat-label">COMPONENTS</span><strong id="count">0</strong></div><div><span class="stat-label">OCCUPIED STRAND</span><strong id="occupied">0 mm</strong></div><div class="capacity"><div><span class="stat-label">STRAND COVERAGE</span><span id="percent">0%</span></div><div class="meter"><i id="meter"></i></div></div><span class="footer-note">Your workbench. Your rules.</span></footer>
+<script type="module" src="app.js"></script>
+</body></html>
